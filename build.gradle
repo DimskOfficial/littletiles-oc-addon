@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://files.minecraftforge.net/maven" }
+        maven { url "https://maven.minecraftforge.net/" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.0.0"
+group = "com.creativemd.littletilesocaddon"
+archivesBaseName = "LittleTilesOCAddon"
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+minecraft {
+    version = "1.12.2-14.23.5.2768"
+    runDir = "run"
+    mappings = "stable_39"
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://www.cursemaven.com" }
+}
+
+dependencies {
+    compile 'net.minecraftforge:forge:1.12.2-14.23.5.2864'
+    // LittleTiles official
+    compile files('../LittleTiles_v1.5.87_mc1.12.2.jar')
+    // CreativeCore
+    compile 'curse.maven:creativecore-257814:3522788'
+    // OpenComputers API
+    compile files('../OpenComputers-MC1.12.2-1.8.9a+8ca336f-api.jar')
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

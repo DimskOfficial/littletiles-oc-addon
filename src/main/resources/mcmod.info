@@ -1,0 +1,16 @@
+[
+{
+  "modid": "littletilesocaddon",
+  "name": "LittleTiles OC Addon",
+  "description": "Adds OpenComputers integration to LittleTiles signal converter",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["CreativeMD (original LittleTiles)", "Addon Author"],
+  "credits": "OpenComputers and LittleTiles teams",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["littletiles", "opencomputers"]
+}
+]

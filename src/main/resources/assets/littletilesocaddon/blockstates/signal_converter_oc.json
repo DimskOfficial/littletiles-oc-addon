@@ -1,0 +1,12 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "littletilesocaddon:signal_converter_oc"
+    },
+    "variants": {
+        "facing=north": { "model": "littletilesocaddon:signal_converter_oc" },
+        "facing=south": { "model": "littletilesocaddon:signal_converter_oc", "y": 180 },
+        "facing=west": { "model": "littletilesocaddon:signal_converter_oc", "y": 270 },
+        "facing=east": { "model": "littletilesocaddon:signal_converter_oc", "y": 90 }
+    }
+}

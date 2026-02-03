@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "up": "littletilesocaddon:blocks/signal_converter_top",
+        "down": "littletilesocaddon:blocks/signal_converter_bottom",
+        "north": "littletilesocaddon:blocks/signal_converter_front",
+        "south": "littletilesocaddon:blocks/signal_converter_back",
+        "west": "littletilesocaddon:blocks/signal_converter_side",
+        "east": "littletilesocaddon:blocks/signal_converter_side",
+        "particle": "littletilesocaddon:blocks/signal_converter_side"
+    }
+}
