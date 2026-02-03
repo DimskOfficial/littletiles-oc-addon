@@ -181,7 +181,3 @@ end
 **Always returns 0**
 - Verify cables are connected to the converter block
 - Check that LittleTiles signal source (lever, button, etc.) is active
-
-## License
-
-MIT (or your license)
