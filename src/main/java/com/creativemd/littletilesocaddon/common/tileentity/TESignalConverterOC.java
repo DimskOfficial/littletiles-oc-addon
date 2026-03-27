@@ -69,6 +69,18 @@ public class TESignalConverterOC extends TileEntityCreative implements ISignalSt
         readFromNBT(nbt);
     }
     
+    @Override
+    public NBTTagCompound getUpdateTag() {
+        NBTTagCompound nbt = new NBTTagCompound();
+        writeToNBT(nbt);
+        return nbt;
+    }
+    
+    @Override
+    public void handleUpdateTag(NBTTagCompound tag) {
+        readFromNBT(tag);
+    }
+    
     // OC Environment
     @Override
     public Node node() {
@@ -265,6 +277,13 @@ public class TESignalConverterOC extends TileEntityCreative implements ISignalSt
             // Send event to OpenComputers
             if (node != null && node.network() != null) {
                 node.sendToReachable("signal_changed", signalValue);
+            }
+            
+            // Sync to client
+            if (!getWorld().isRemote) {
+                IBlockState blockState = getWorld().getBlockState(pos);
+                getWorld().notifyBlockUpdate(pos, blockState, blockState, 3);
+                markDirty();
             }
             
             changed();
